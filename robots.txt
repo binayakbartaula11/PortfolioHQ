@@ -1,0 +1,9 @@
+# robots.txt for binayakbartaula.com.np
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://binayakbartaula.com.np/sitemap.xml
+
+# Optimize crawl rate
+Crawl-delay: 1 
