@@ -962,6 +962,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectCategoryBtns = document.querySelectorAll('.project-category-btn');
     const projectContainers = document.querySelectorAll('.project-category-container');
     
+    // Initialize project containers (hide all except the active one)
+    projectContainers.forEach(container => {
+        container.classList.remove('active');
+    });
+    // Show the default container (web development)
+    document.getElementById('web-projects').classList.add('active');
+    
     projectCategoryBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             // Remove active class from all buttons
@@ -1051,6 +1058,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="https://twitter.com/bartaulabinayak" target="_blank" rel="noopener" aria-label="Twitter">
                     <i class="fab fa-twitter"></i>
                     <span>Twitter</span>
+                </a>
+                <a href="https://bsky.app/profile/binayakbartaula.bsky.social" target="_blank" rel="noopener" aria-label="BlueSky Profile">
+                    <img src="public/assets/images/bluesky_logo.png" alt="BlueSky Logo" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 20px;" />
+                    <span>BlueSky</span>
                 </a>
             </div>
             <button class="social-modal-close" aria-label="Close">
@@ -1570,4 +1581,4 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     makeAccessible();
-}); 
+});
