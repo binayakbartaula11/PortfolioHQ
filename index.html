@@ -565,6 +565,9 @@
                 <button class="project-category-btn active" data-category="web" role="tab" aria-selected="true" id="tab-web">Web Development</button>
                 <button class="project-category-btn" data-category="api" role="tab" aria-selected="false" id="tab-api">API Integration</button>
                 <button class="project-category-btn" data-category="ml" role="tab" aria-selected="false" id="tab-ml">Machine Learning & AI</button>
+                <button class="project-category-btn" data-category="cv" role="tab" aria-selected="false" id="tab-cv">Computer Vision</button>
+                <button class="project-category-btn" data-category="algo" role="tab" aria-selected="false" id="tab-algo">Algorithm Visualization</button>
+                <button class="project-category-btn" data-category="forecast" role="tab" aria-selected="false" id="tab-forecast">Forecasting</button>
             </div>
             
             <!-- Web Development Projects -->
@@ -769,8 +772,65 @@
             <!-- Machine Learning & AI Projects -->
             <div class="project-category-container" id="ml-projects" role="tabpanel" aria-labelledby="tab-ml">
                 <div class="project-grid">
+                    <!-- F1 Performance Predictor Project --> 
+                    <div class="project-card" data-aos="fade-up"> 
+                        <div class="project-img"> 
+                            <img src="public/assets/images/F1PerformancePredictor.png" alt="F1 Performance Predictor"> 
+                            <div class="project-overlay"> 
+                                <div class="project-overlay-icon"> 
+                                    <i class="fas fa-eye" aria-hidden="true"></i> 
+                                </div> 
+                                <div class="project-overlay-text">View Project</div> 
+                            </div> 
+                        </div> 
+                        <div class="project-info"> 
+                            <h3>F1 Performance Predictor</h3> 
+                            <p>Using machine learning and historical data, this system forecasts the 2025 season with a multiple linear regression model, delivering accurate predictions based on key metrics for enthusiasts, analysts, and investors.</p> 
+                            <div class="project-tech"> 
+                                <span>Python</span> 
+                                <span>pandas</span> 
+                                <span>NumPy</span> 
+                                <span>scikit-learn</span> 
+                                <span>matplotlib</span> 
+                                <span>Seaborn</span> 
+                            </div> 
+                            <div class="project-links"> 
+                                <a href="https://github.com/binayakbartaula11/F1-Performance-Predictor" target="_blank" class="btn btn-small">GitHub</a> 
+                                <a href="https://github.com/binayakbartaula11/F1-Performance-Predictor/blob/main/notebooks/F1_driver_championship_prediction.ipynb" target="_blank" class="btn btn-small btn-outline">Live Demo</a> 
+                            </div> 
+                        </div> 
+                    </div>
+                    
+                    <!-- AI/ML Startup Funding Forecast Project --> 
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100"> 
+                        <div class="project-img"> 
+                            <img src="public/assets/images/ai-funding-forecast.png" alt="AI/ML Funding Forecast"> 
+                            <div class="project-overlay"> 
+                                <div class="project-overlay-icon"> 
+                                    <i class="fas fa-eye" aria-hidden="true"></i> 
+                                </div> 
+                                <div class="project-overlay-text">View Project</div> 
+                            </div> 
+                        </div> 
+                        <div class="project-info"> 
+                            <h3>AI/ML Startup Funding Forecast 📉📈</h3> 
+                            <p>This project forecasts AI/ML startup funding trends using three moving averages: SMA, WMA, and EMA. The interactive Streamlit app visualizes historical data (2018-2024) and projects 2025 trends, helping investors and analysts predict future patterns.</p> 
+                            <div class="project-tech"> 
+                                <span>Python</span> 
+                                <span>Streamlit</span> 
+                                <span>Pandas</span> 
+                                <span>Plotly</span> 
+                                <span>NumPy</span> 
+                            </div> 
+                            <div class="project-links"> 
+                                <a href="https://github.com/binayakbartaula11/AI-Funding-Predictor" target="_blank" class="btn btn-small">GitHub</a> 
+                                <a href="https://ai-funding-predictor.streamlit.app" target="_blank" class="btn btn-small btn-outline">Live Demo</a> 
+                            </div> 
+                        </div> 
+                    </div>
+                    
                     <!-- Quantum Circuits Analysis Project -->
-                    <div class="project-card" data-aos="fade-up">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="project-img">
                             <img src="public/assets/images/QCM.jpg" alt="Quantum Circuits Analysis">
                             <div class="project-overlay">
@@ -797,7 +857,7 @@
                     </div>
                     
                     <!-- Exam Predictor Project -->
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="project-img">
                             <img src="public/assets/images/ExamPredictor.jpg" alt="Exam Predictor">
                             <div class="project-overlay">
@@ -822,6 +882,132 @@
                                 <a href="#" class="btn btn-small btn-outline disabled">GitHub</a>
                             </div>
                         </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- Computer Vision Projects -->
+            <div class="project-category-container" id="cv-projects" role="tabpanel" aria-labelledby="tab-cv">
+                <div class="project-grid">
+                    <!-- GhostTouch Project --> 
+                    <div class="project-card" data-aos="fade-up"> 
+                        <div class="project-img"> 
+                            <img src="public/assets/images/GhostTouch.jpg" alt="GhostTouch"> 
+                            <div class="project-overlay"> 
+                                <div class="project-overlay-icon"> 
+                                    <i class="fas fa-eye" aria-hidden="true"></i> 
+                                </div> 
+                                <div class="project-overlay-text">View Project</div> 
+                            </div> 
+                        </div> 
+                        <div class="project-info"> 
+                            <h3>GhostTouch</h3> 
+                            <p>This gesture-based system, powered by computer vision and hand-tracking (MediaPipe), enables seamless, touch-free interaction with your computer. Navigate, adjust volume, and scroll—all with natural hand movements. Say goodbye to clicks and taps.</p> 
+                            <div class="project-tech"> 
+                                <span>Python</span> 
+                                <span>MediaPipe</span> 
+                                <span>OpenCV</span> 
+                                <span>PyAutoGUI</span> 
+                                <span>NumPy</span> 
+                            </div> 
+                            <div class="project-links"> 
+                                <a href="https://github.com/binayakbartaula11/GhostTouch" target="_blank" class="btn btn-small">GitHub</a> 
+                                <a href="https://github.com/binayakbartaula11/GhostTouch" target="_blank" class="btn btn-small btn-outline">Live Demo</a> 
+                            </div> 
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Algorithm Visualization Projects -->
+            <div class="project-category-container" id="algo-projects" role="tabpanel" aria-labelledby="tab-algo">
+                <div class="project-grid">
+                    <!-- Maze Generation and Solving Simulation Project --> 
+                    <div class="project-card" data-aos="fade-up"> 
+                        <div class="project-img"> 
+                            <img src="public/assets/images/maze-simulation.png" alt="Maze Simulation"> 
+                            <div class="project-overlay"> 
+                                <div class="project-overlay-icon"> 
+                                    <i class="fas fa-eye" aria-hidden="true"></i> 
+                                </div> 
+                                <div class="project-overlay-text">View Project</div> 
+                            </div> 
+                        </div> 
+                        <div class="project-info"> 
+                            <h3>Maze Generation and Solving Simulation</h3> 
+                            <p>This interactive simulation visualizes maze generation and solving using various pathfinding algorithms, including DFS, BFS, A*, and more. Developed with Python and Pygame, it provides an insightful, hands-on experience for understanding the intricacies of algorithmic problem-solving and maze-solving techniques.</p> 
+                            <div class="project-tech"> 
+                                <span>Python</span> 
+                                <span>Pygame</span> 
+                            </div> 
+                            <div class="project-links"> 
+                                <a href="https://github.com/binayakbartaula11/maze-runner-sim" target="_blank" class="btn btn-small">GitHub</a> 
+                                <a href="https://github.com/binayakbartaula11/maze-runner-sim" target="_blank" class="btn btn-small btn-outline">Live Demo</a> 
+                            </div> 
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Forecasting Projects -->
+            <div class="project-category-container" id="forecast-projects" role="tabpanel" aria-labelledby="tab-forecast">
+                <div class="project-grid">
+                    <!-- F1 Performance Predictor Project --> 
+                    <div class="project-card" data-aos="fade-up"> 
+                        <div class="project-img"> 
+                            <img src="public/assets/images/F1PerformancePredictor.png" alt="F1 Performance Predictor"> 
+                            <div class="project-overlay"> 
+                                <div class="project-overlay-icon"> 
+                                    <i class="fas fa-eye" aria-hidden="true"></i> 
+                                </div> 
+                                <div class="project-overlay-text">View Project</div> 
+                            </div> 
+                        </div> 
+                        <div class="project-info"> 
+                            <h3>F1 Performance Predictor</h3> 
+                            <p>Using machine learning and historical data, this system forecasts the 2025 season with a multiple linear regression model, delivering accurate predictions based on key metrics for enthusiasts, analysts, and investors.</p> 
+                            <div class="project-tech"> 
+                                <span>Python</span> 
+                                <span>pandas</span> 
+                                <span>NumPy</span> 
+                                <span>scikit-learn</span> 
+                                <span>matplotlib</span> 
+                                <span>Seaborn</span> 
+                            </div> 
+                            <div class="project-links"> 
+                                <a href="https://github.com/binayakbartaula11/F1-Performance-Predictor" target="_blank" class="btn btn-small">GitHub</a> 
+                                <a href="https://github.com/binayakbartaula11/F1-Performance-Predictor/blob/main/notebooks/F1_driver_championship_prediction.ipynb" target="_blank" class="btn btn-small btn-outline">Live Demo</a> 
+                            </div> 
+                        </div> 
+                    </div>
+                    
+                    <!-- AI/ML Startup Funding Forecast Project --> 
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100"> 
+                        <div class="project-img"> 
+                            <img src="public/assets/images/ai-funding-forecast.png" alt="AI/ML Funding Forecast"> 
+                            <div class="project-overlay"> 
+                                <div class="project-overlay-icon"> 
+                                    <i class="fas fa-eye" aria-hidden="true"></i> 
+                                </div> 
+                                <div class="project-overlay-text">View Project</div> 
+                            </div> 
+                        </div> 
+                        <div class="project-info"> 
+                            <h3>AI/ML Startup Funding Forecast</h3> 
+                            <p>This project forecasts AI/ML startup funding trends using three moving averages: SMA, WMA, and EMA. The interactive Streamlit app visualizes historical data (2018-2024) and projects 2025 trends, helping investors and analysts predict future patterns.</p> 
+                            <div class="project-tech"> 
+                                <span>Python</span> 
+                                <span>Streamlit</span> 
+                                <span>Pandas</span> 
+                                <span>Plotly</span> 
+                                <span>NumPy</span> 
+                            </div> 
+                            <div class="project-links"> 
+                                <a href="https://github.com/binayakbartaula11/AI-Funding-Predictor" target="_blank" class="btn btn-small">GitHub</a> 
+                                <a href="https://ai-funding-predictor.streamlit.app" target="_blank" class="btn btn-small btn-outline">Live Demo</a> 
+                            </div> 
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -986,7 +1172,7 @@
                         </div>
                         <div class="contact-item phone">
                             <i class="fas fa-phone" aria-hidden="true"></i>
-                            <p><a href="tel:9762******">+997 9762******</a></p>
+                            <p><a href="tel:9762******">+977 9762******</a></p>
                         </div>
                         <div class="contact-item address">
                             <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
@@ -1049,6 +1235,9 @@
                         <a href="https://twitter.com/BartaulaBinayak" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile">
                             <i class="fab fa-twitter" aria-hidden="true"></i>
                         </a>
+                        <!-- <a href="https://bsky.app/profile/binayakbartaula.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="BlueSky Profile">
+                            <img src="public/assets/images/bluesky_logo.png" alt="BlueSky Logo" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 5px;" />
+                        </a> -->
                         <a href="https://binayakio.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="E-Presence">
                             <i class="fas fa-globe" aria-hidden="true"></i>
                         </a>
@@ -1070,4 +1259,4 @@
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
-</html> 
+</html>
