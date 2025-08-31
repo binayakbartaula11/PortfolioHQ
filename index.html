@@ -22,22 +22,54 @@
     <meta name="twitter:description" content="Explore Binayak Bartaula's professional portfolio with innovative projects in web development, app development, AI/ML, and cybersecurity.">
     <meta name="twitter:image" content="https://i.ibb.co/jkvYgCBJ/Chat-GPT-Image-Mar-25-2025-10-17-47-AM.png">
     <title>Binayak's Digital Odyssey</title>
-    <link rel="icon" type="image/png" href="public/favicon.png" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
     <!-- AOS (Animate On Scroll) CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./css/style.css?v=1.0.0">
+    <link rel="stylesheet" href="css/style.css?v=1.0.4">
     <script>
-        // Fallback CSS loading check
+        // Comprehensive resource loading check
         window.addEventListener('load', function() {
+            // CSS fallback check
             const link = document.querySelector('link[href*="style.css"]');
             if (link && !link.sheet) {
                 console.error('CSS failed to load, attempting fallback');
                 const fallback = document.createElement('link');
                 fallback.rel = 'stylesheet';
-                fallback.href = './css/style.css?v=' + Date.now();
+                fallback.href = 'css/style.css?v=' + Date.now();
                 document.head.appendChild(fallback);
             }
+            
+            // Resources checked
+        });
+        
+        // Enhanced image loading error handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            let failedImages = [];
+            
+            images.forEach(img => {
+                img.addEventListener('error', function() {
+                    console.error('[Image Load Failed]', this.src.split('/').pop());
+                    failedImages.push(this.src);
+                    
+                    // Try alternative path
+                    const filename = this.src.split('/').pop();
+                    if (!this.src.includes('assets/images/')) {
+                        this.src = `assets/images/${filename}`;
+                    }
+                });
+                
+                // Image load handlers attached
+            });
+            
+            // Report failed images after page load
+            setTimeout(() => {
+                if (failedImages.length > 0) {
+                    console.error('[Image Load Failed]', failedImages.length, 'images');
+                }
+            }, 5000);
         });
     </script>
     <!-- Google Fonts -->
@@ -194,7 +226,7 @@
                 <div class="about-content">
                     <div class="about-image">
                         <div class="image-container">
-                            <img src="public/assets/images/Chat-GPT-Image-Mar-25-2025-10-17-47-AM.png" alt="Binayak Bartaula" width="300" height="300">
+                            <img src="assets/images/Chat-GPT-Image-Mar-25-2025-10-17-47-AM.png" alt="Binayak Bartaula" width="300" height="300">
                         </div>
                     </div>
                     <div class="about-text">
@@ -221,7 +253,7 @@
                           </div>
                         
                         <div class="about-cv-download" data-aos="fade-up" data-aos-delay="300">
-                            <a href="/public/assets/resume/Binayak_Resume.pdf" download class="btn btn-primary" aria-label="Download Resume">
+                            <a href="assets/resume/Binayak_Resume.pdf" download class="btn btn-primary" aria-label="Download Resume">
                                 <i class="fas fa-file-download" aria-hidden="true"></i>
                                 <span>Resume</span>
                             </a>
@@ -339,7 +371,7 @@
                     </div>
                     <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
                         <div class="skill-icon">
-                            <img src="public/assets/images/typescript-logo.png" alt="TypeScript" class="typescript-logo">
+                            <img src="assets/images/typescript-logo.png" alt="TypeScript" class="typescript-logo">
                         </div>
                         <div class="skill-info">
                             <h4>TypeScript</h4>
@@ -592,7 +624,7 @@
                     <!-- Budget Sentinel Project -->
                     <div class="project-card" data-aos="fade-up">
                         <div class="project-img">
-                            <img src="./public/assets/images/BudgetSentinel.jpg" alt="Budget Sentinel" loading="lazy" width="400" height="250">
+                            <img src="assets/images/BudgetSentinel.jpg" alt="Budget Sentinel" loading="lazy" width="400" height="250">
                             <div class="project-overlay">
                                 <div class="project-overlay-icon">
                                     <i class="fas fa-eye" aria-hidden="true"></i>
@@ -618,7 +650,7 @@
                     <!-- Cogneto Project -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="project-img">
-                            <img src="./public/assets/images/cogneto.png" alt="Cogneto" loading="lazy" width="400" height="250">
+                            <img src="assets/images/cogneto.png" alt="Cogneto" loading="lazy" width="400" height="250">
                             <div class="project-overlay">
                                 <div class="project-overlay-icon">
                                     <i class="fas fa-eye" aria-hidden="true"></i>
@@ -647,7 +679,7 @@
                     <!-- LitQuotes Project -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="400">
                         <div class="project-img">
-                            <img src="./public/assets/images/LitQuotes.jpg" alt="LitQuotes - A Timeless Collection of Literary Wisdom" loading="lazy" width="400" height="250">
+                            <img src="assets/images/LitQuotes.jpg" alt="LitQuotes - A Timeless Collection of Literary Wisdom" loading="lazy" width="400" height="250">
                             <div class="project-overlay">
                                 <div class="project-overlay-icon">
                                     <i class="fas fa-eye" aria-hidden="true"></i>
@@ -675,7 +707,7 @@
                     <!-- Aurora Atelier Project -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="project-img">
-                            <img src="./public/assets/images/AuroraAtelier.png" alt="Aurora Atelier - Paint App" loading="lazy" width="400" height="250">
+                            <img src="assets/images/AuroraAtelier.png" alt="Aurora Atelier - Paint App" loading="lazy" width="400" height="250">
                             <div class="project-overlay">
                                 <div class="project-overlay-icon">
                                     <i class="fas fa-eye" aria-hidden="true"></i>
@@ -703,7 +735,7 @@
                     <!-- GradeVista Project -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="project-img">
-                            <img src="./public/assets/images/GradeVista.jpg" alt="GradeVista - Grade Management Tool" loading="lazy" width="400" height="250">
+                            <img src="assets/images/GradeVista.jpg" alt="GradeVista - Grade Management Tool" loading="lazy" width="400" height="250">
                             <div class="project-overlay">
                                 <div class="project-overlay-icon">
                                     <i class="fas fa-eye" aria-hidden="true"></i>
@@ -733,7 +765,7 @@
                     <!-- Weatherfy Project -->
                     <div class="project-card" data-aos="fade-up">
                         <div class="project-img">
-                            <img src="./public/assets/images/Weatherfy.jpg" alt="Weatherfy">
+                            <img src="assets/images/Weatherfy.jpg" alt="Weatherfy">
                             <div class="project-overlay">
                                 <div class="project-overlay-icon">
                                     <i class="fas fa-eye" aria-hidden="true"></i>
@@ -760,7 +792,7 @@
                     <!-- Xchangify Project -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="project-img">
-                            <img src="./public/assets/images/Xchangify.jpg" alt="Xchangify">
+                            <img src="assets/images/Xchangify.jpg" alt="Xchangify">
                             <div class="project-overlay">
                                 <div class="project-overlay-icon">
                                     <i class="fas fa-eye" aria-hidden="true"></i>
@@ -787,7 +819,7 @@
                     <!-- EclipsoTrack Project -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="project-img">
-                            <img src="./public/assets/images/EclipsoTrack.jpg" alt="EclipsoTrack">
+                            <img src="assets/images/EclipsoTrack.jpg" alt="EclipsoTrack">
                             <div class="project-overlay">
                                 <div class="project-overlay-icon">
                                     <i class="fas fa-eye" aria-hidden="true"></i>
@@ -821,7 +853,7 @@
                     <!-- F1 Performance Predictor Project --> 
                     <div class="project-card" data-aos="fade-up"> 
                         <div class="project-img"> 
-                            <img src="./public/assets/images/F1PerformancePredictor.png" alt="F1 Performance Predictor"> 
+                            <img src="assets/images/F1PerformancePredictor.png" alt="F1 Performance Predictor"> 
                             <div class="project-overlay"> 
                                 <div class="project-overlay-icon"> 
                                     <i class="fas fa-eye" aria-hidden="true"></i> 
@@ -850,7 +882,7 @@
                     <!-- AI/ML Startup Funding Forecast Project --> 
                     <div class="project-card" data-aos="fade-up" data-aos-delay="100"> 
                         <div class="project-img"> 
-                            <img src="./public/assets/images/ai-funding-forecast.png" alt="AI/ML Funding Forecast"> 
+                            <img src="assets/images/ai-funding-forecast.png" alt="AI/ML Funding Forecast"> 
                             <div class="project-overlay"> 
                                 <div class="project-overlay-icon"> 
                                     <i class="fas fa-eye" aria-hidden="true"></i> 
@@ -878,7 +910,7 @@
                     <!-- Quantum Circuits Analysis Project -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="project-img">
-                            <img src="./public/assets/images/QCM.jpg" alt="Quantum Circuits Analysis">
+                            <img src="assets/images/QCM.jpg" alt="Quantum Circuits Analysis">
                             <div class="project-overlay">
                                 <div class="project-overlay-icon">
                                     <i class="fas fa-eye" aria-hidden="true"></i>
@@ -905,7 +937,7 @@
                     <!-- Exam Predictor Project -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="project-img">
-                            <img src="./public/assets/images/ExamPredictor.jpg" alt="Exam Predictor">
+                            <img src="assets/images/ExamPredictor.jpg" alt="Exam Predictor">
                             <div class="project-overlay">
                                 <div class="project-overlay-icon">
                                     <i class="fas fa-eye" aria-hidden="true"></i>
@@ -933,7 +965,7 @@
                     <!-- ImageGlitch Project -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="400">
                         <div class="project-img">
-                            <img src="./public/assets/images/ImageGlitch.jpg" alt="ImageGlitch - AI Art Suite">
+                            <img src="assets/images/ImageGlitch.jpg" alt="ImageGlitch - AI Art Suite">
                             <div class="project-overlay">
                                 <div class="project-overlay-icon">
                                     <i class="fas fa-eye" aria-hidden="true"></i>
@@ -967,7 +999,7 @@
                     <!-- GhostTouch Project --> 
                     <div class="project-card" data-aos="fade-up"> 
                         <div class="project-img"> 
-                            <img src="./public/assets/images/GhostTouch.jpg" alt="GhostTouch"> 
+                            <img src="assets/images/GhostTouch.jpg" alt="GhostTouch"> 
                             <div class="project-overlay"> 
                                 <div class="project-overlay-icon"> 
                                     <i class="fas fa-eye" aria-hidden="true"></i> 
@@ -1000,7 +1032,7 @@
                     <!-- Maze Generation and Solving Simulation Project --> 
                     <div class="project-card" data-aos="fade-up"> 
                         <div class="project-img"> 
-                            <img src="./public/assets/images/maze-simulation.png" alt="Maze Simulation"> 
+                            <img src="assets/images/maze-simulation.png" alt="Maze Simulation"> 
                             <div class="project-overlay"> 
                                 <div class="project-overlay-icon"> 
                                     <i class="fas fa-eye" aria-hidden="true"></i> 
@@ -1294,9 +1326,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="./js/config.js?v=1.0.0"></script>
-    <script src="./js/script.js?v=1.0.0"></script>
-    <script src="./js/blog.js?v=1.0.0" type="module" defer></script>
+    <script src="js/config.js?v=1.0.4"></script>
+    <script src="js/script.js?v=1.0.4"></script>
+    <script src="js/blog.js?v=1.0.4" type="module" defer></script>
     
 </body>
 </html> 
