@@ -52,6 +52,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Active navigation highlighting
+    function updateActiveNav() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+        
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    // Update active nav on scroll
+    window.addEventListener('scroll', updateActiveNav);
+    
     // Social Links Button functionality
     const socialLinksButton = document.querySelector('.social-links-button');
     const socialLinksModal = document.querySelector('.social-links-modal');
@@ -264,6 +289,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let typingSpeed = 100;
     
     function typeWriter() {
+        if (!typewriterText) return; // Safety check
+        
         const currentPhrase = phrases[phraseIndex];
         
         if (isDeleting) {
@@ -288,8 +315,10 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(typeWriter, typingSpeed);
     }
     
-    // Start typewriter effect
-    typeWriter();
+    // Start typewriter effect with safety check
+    if (typewriterText) {
+        typeWriter();
+    }
     
     // Create matrix rain effect in the background
     const canvas = document.createElement('canvas');
@@ -377,6 +406,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
+                // Close mobile menu if open
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                
                 window.scrollTo({
                     top: targetElement.offsetTop - 70, // Offset for fixed header
                     behavior: 'smooth'
@@ -680,7 +713,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     clearInterval(interval);
                 } else {
                     counter++;
-                    percentageText.textContent = counter + '%';
+                    if (percentageText) {
+                        percentageText.textContent = counter + '%';
+                    }
                 }
             }, 15);
         });
@@ -1570,4 +1605,44 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     makeAccessible();
+    
+    // Blog card interactions
+    function initializeBlogInteractions() {
+        const blogCards = document.querySelectorAll('.blog-card');
+        
+        blogCards.forEach(card => {
+            // Add keyboard navigation
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'article');
+            
+            // Add keyboard interaction
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const ctaLink = card.querySelector('.blog-cta');
+                    if (ctaLink) {
+                        ctaLink.click();
+                    }
+                }
+            });
+            
+            // Add focus styles
+            card.addEventListener('focus', () => {
+                card.style.outline = '2px solid var(--neon-purple)';
+                card.style.outlineOffset = '2px';
+            });
+            
+            card.addEventListener('blur', () => {
+                card.style.outline = 'none';
+            });
+        });
+    }
+    
+    // Initialize blog interactions after a short delay to ensure DOM is ready
+    setTimeout(initializeBlogInteractions, 500);
+    
+    // Listen for blog loaded event
+    document.addEventListener('blogLoaded', () => {
+        initializeBlogInteractions();
+    });
 }); 
