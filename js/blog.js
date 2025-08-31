@@ -9,7 +9,7 @@ const blogData = [
       "This paper presents an interactive Python-Pygame platform for real-time visualization and comparison of six classical maze generation and pathfinding algorithms. Its modular design supports extensibility and 60FPS performance, serving as a tool for education and research.",
     link: "https://is.gd/mlfcyl",
     ctaText: "Read Full Research",
-    thumbnail: "public/assets/images/interactive_maze_pathfinding_simulator.png",
+    thumbnail: "assets/images/interactive_maze_pathfinding_simulator.png",
   },
   {
     title: "ImageGlitch: A Developer's Journey Through Deployment Hell (And How I Survived It)",
@@ -20,7 +20,7 @@ const blogData = [
       "Ever pushed an app to production only to watch it crash again and again? Join me on a wild ride through deployment disasters, memory crashes, and over 30 frantic commits, all to bring ImageGlitch to life. Spoiler: it wasn't pretty, but every struggle was worth it in the end.",
     link: "https://medium.com/@binayakbartaula/imageglitch-a-developers-journey-through-deployment-hell-and-how-i-survived-it-2b280ed9454c",
     ctaText: "Read Devlog",
-    thumbnail: "public/assets/images/imageglitch-deployment-chaos.png",
+    thumbnail: "assets/images/imageglitch-deployment-chaos.png",
   },
   {
     title: "The Quiet Art of Claiming: From Name to Network, Your Free .com.np Domain Awaits",
@@ -31,7 +31,7 @@ const blogData = [
       "Unlock your professional online presence with a free .com.np domain with no cost and no hassle. Learn how students and entrepreneurs across Nepal are claiming their space on the web before upcoming policy changes take effect. Don't wait. Start building your digital future today!",
     link: "https://medium.com/@binayakbartaula/the-quiet-art-of-claiming-from-name-to-network-your-free-com-np-domain-awaits-73c31206297e",
     ctaText: "Read More",
-    thumbnail: "public/assets/images/free-com-np-domain.png",
+    thumbnail: "assets/images/free-com-np-domain.png",
   },
   {
     title: "The Missing Middle: Why GitHub Needs Unlisted Repositories",
@@ -42,7 +42,7 @@ const blogData = [
       "Why does GitHub only offer \"public\" or \"private\" with no middle ground? Developers juggle cryptic repo names and messy permissions just to share work in progress code. Unlisted repositories could fix this, making sharing easier, less stressful, and more collaborative.",
     link: "https://medium.com/@binayakbartaula/the-missing-middle-why-github-needs-unlisted-repositories-and-why-im-tired-of-pretending-it-41113f0676b5",
     ctaText: "Read on Medium",
-    thumbnail: "public/assets/images/3am-developer-dilemma.png",
+    thumbnail: "assets/images/3am-developer-dilemma.png",
   }
 ];
 
@@ -50,7 +50,7 @@ const blogData = [
 const blogPerformance = {
   startTime: performance.now(),
   logMetric(name, value) {
-    console.log(`[Blog Performance] ${name}: ${value}ms`);
+    // Performance metric logged
   },
   measureRenderTime() {
     const endTime = performance.now();
@@ -62,13 +62,13 @@ const blogPerformance = {
 class BlogRenderer {
   constructor() {
     this.blogContainer = document.getElementById("blog-grid");
-    console.log("BlogRenderer initialized, container found:", !!this.blogContainer);
+    // BlogRenderer initialized
   }
 
   init() {
     try {
       if (this.blogContainer) {
-        console.log("Starting blog rendering process");
+        // Starting blog rendering
         this.renderBlogCards();
         this.setupInteractions();
         this.setupLazyLoading();
@@ -82,7 +82,7 @@ class BlogRenderer {
 
   renderBlogCards() {
     try {
-      console.log("Rendering blog cards, data length:", blogData.length);
+      // Rendering blog cards
       // Show loading skeleton first
       this.showLoadingSkeleton();
       
@@ -93,12 +93,12 @@ class BlogRenderer {
           blogData.forEach((blog, index) => {
             const blogCard = this.createBlogCard(blog, index);
             this.blogContainer.appendChild(blogCard);
-            console.log("Added blog card:", blog.title);
+            // Blog card added
           });
           
           // Enhanced AOS initialization with error handling
           if (window.AOS) {
-            console.log("Refreshing AOS animations");
+            // AOS animations refreshed
             setTimeout(() => {
               try {
                 window.AOS.refresh();
@@ -119,7 +119,7 @@ class BlogRenderer {
   }
 
   showLoadingSkeleton() {
-    console.log("Showing loading skeleton");
+    // Loading skeleton shown
     this.blogContainer.innerHTML = "";
     for (let i = 0; i < 4; i++) {
       const skeleton = document.createElement("div");
@@ -174,7 +174,7 @@ class BlogRenderer {
   }
 
   setupInteractions() {
-    console.log("Setting up blog interactions");
+    // Blog interactions setup
     // Enhanced hover effects with single-card glow behavior
     let currentHoveredCard = null;
     let hoverTimeout;
@@ -209,7 +209,7 @@ class BlogRenderer {
     document.addEventListener("click", (e) => {
       const ctaButton = e.target.closest(".blog-cta");
       if (ctaButton) {
-        console.log("Creating ripple effect for CTA button");
+        // Ripple effect created
         this.createRippleEffect(e, ctaButton);
       }
     });
@@ -286,13 +286,13 @@ class BlogRenderer {
         }
       `;
       document.head.appendChild(blogRippleStyle);
-      console.log("Added ripple effect styles");
+      // Ripple styles added
     }
   }
 
   setupLazyLoading() {
     try {
-      console.log("Setting up lazy loading for blog images");
+      // Lazy loading setup
       // Enhanced lazy loading with Intersection Observer
       if ("IntersectionObserver" in window) {
         const imageObserver = new IntersectionObserver(
@@ -304,7 +304,7 @@ class BlogRenderer {
                   img.src = img.dataset.src || img.src;
                   img.classList.remove("lazy");
                   observer.unobserve(img);
-                  console.log("Lazy loaded image:", img.alt);
+                  // Image lazy loaded
                 }
               } catch (error) {
                 console.warn("Lazy loading failed for image:", error.message);
@@ -321,7 +321,7 @@ class BlogRenderer {
         setTimeout(() => {
           try {
             const blogImages = document.querySelectorAll(".blog-thumbnail img");
-            console.log("Observing", blogImages.length, "blog images for lazy loading");
+            // Blog images observed for lazy loading
             blogImages.forEach((img) => {
               imageObserver.observe(img);
             });
@@ -347,7 +347,7 @@ class BlogRenderer {
 // Initialize blog functionality when DOM is ready with error handling
 document.addEventListener("DOMContentLoaded", () => {
   try {
-    console.log("DOM loaded, initializing blog renderer");
+    // Blog renderer initializing
     const blogRenderer = new BlogRenderer();
     blogRenderer.init();
     
