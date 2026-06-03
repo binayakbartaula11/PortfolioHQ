@@ -9,7 +9,7 @@ const blogData = [
       "This paper presents an interactive Python-Pygame platform for real-time visualization and comparison of six classical maze generation and pathfinding algorithms. Its modular design supports extensibility and 60FPS performance, serving as a tool for education and research.",
     link: "https://is.gd/mlfcyl",
     ctaText: "Read Full Research",
-    thumbnail: "assets/images/interactive_maze_pathfinding_simulator.png",
+    thumbnail: "assets/images/interactive_maze_pathfinding_simulator.avif",
   },
   {
     title: "ImageGlitch: A Developer's Journey Through Deployment Hell (And How I Survived It)",
@@ -20,7 +20,7 @@ const blogData = [
       "Ever pushed an app to production only to watch it crash again and again? Join me on a wild ride through deployment disasters, memory crashes, and over 30 frantic commits, all to bring ImageGlitch to life. Spoiler: it wasn't pretty, but every struggle was worth it in the end.",
     link: "https://medium.com/@binayakbartaula/imageglitch-a-developers-journey-through-deployment-hell-and-how-i-survived-it-2b280ed9454c",
     ctaText: "Read Devlog",
-    thumbnail: "assets/images/imageglitch-deployment-chaos.png",
+    thumbnail: "assets/images/imageglitch-deployment-chaos.avif",
   },
   {
     title: "The Quiet Art of Claiming: From Name to Network, Your Free .com.np Domain Awaits",
@@ -31,7 +31,18 @@ const blogData = [
       "Unlock your professional online presence with a free .com.np domain with no cost and no hassle. Learn how students and entrepreneurs across Nepal are claiming their space on the web before upcoming policy changes take effect. Don't wait. Start building your digital future today!",
     link: "https://medium.com/@binayakbartaula/the-quiet-art-of-claiming-from-name-to-network-your-free-com-np-domain-awaits-73c31206297e",
     ctaText: "Read More",
-    thumbnail: "assets/images/free-com-np-domain.png",
+    thumbnail: "assets/images/free-com-np-domain.avif",
+  },
+{
+    title: "The Image That Broke Reality: How One Prompt Changed Everything",
+    author: "Binayak Bartaula",
+    published: "September 2025",
+    readTime: "14 min read",
+    teaser:
+      "How one viral AI-generated image sparked a cultural phenomenon. Exploring Google’s Nano Banana (Gemini Flash Image 2.5), dream visualization, synthetic memory, and the blurring line between reality and imagination.",
+    link: "https://medium.com/@binayakbartaula/the-image-that-broke-reality-how-one-prompt-changed-everything-a989d04d2c76",
+    ctaText: "Read the Story",
+    thumbnail: "assets/images/dream-selfie-ai-breakthrough.avif", 
   },
   {
     title: "The Missing Middle: Why GitHub Needs Unlisted Repositories",
@@ -42,7 +53,18 @@ const blogData = [
       "Why does GitHub only offer \"public\" or \"private\" with no middle ground? Developers juggle cryptic repo names and messy permissions just to share work in progress code. Unlisted repositories could fix this, making sharing easier, less stressful, and more collaborative.",
     link: "https://medium.com/@binayakbartaula/the-missing-middle-why-github-needs-unlisted-repositories-and-why-im-tired-of-pretending-it-41113f0676b5",
     ctaText: "Read on Medium",
-    thumbnail: "assets/images/3am-developer-dilemma.png",
+    thumbnail: "assets/images/3am-developer-dilemma.avif",
+  },
+  {
+    title: "From Admin to Actually Admin: My Journey to DNS Freedom",
+    author: "Binayak Bartaula",
+    published: "October 2025",
+    readTime: "12 min read",
+    teaser:
+      "The frustrating fight against Chrome’s “Managed Browser” restrictions and how I finally took back control of my DNS settings at the system level. A story of digital rebellion and practical solutions.",
+    link: "https://medium.com/@binayakbartaula/from-admin-to-actually-admin-my-journey-to-dns-freedom-2a727a358e34",
+    ctaText: "Read the Rebellion",
+    thumbnail: "assets/images/dns-freedom-admin-rebellion.avif", 
   }
 ];
 
