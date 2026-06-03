@@ -230,13 +230,8 @@
                         </div>
                     </div>
                     <div class="about-text">
-                        <p>I'm a Computer Science student passionate about building
-                            innovative digital solutions. With expertise in web development,
-                            programming, and problem-solving, I thrive in dynamic
-                            environments.</p>
-                        <p>Continuously exploring emerging technologies, I focus on
-                            creating efficient and secure applications. My hands-on projects
-                            and research enhance my technical skills and logical thinking.</p>
+                        <p>I am a student of Computer Science and Engineering, with a particular predilection for crafting innovative digital solutions. I possess experience in web development, programming, and the art of problem-solving, and I am most at home in environments that are both dynamic and exacting.</p>
+                        <p>I continue to acquaint myself with emerging technologies, with a view to designing applications that are efficient and secure. My practical projects and research serve to refine my technical acumen and strengthen my capacity for logical thought.</p>
                         <div class="about-details">
                             <div class="detail">
                               <i class="fas fa-graduation-cap" aria-hidden="true"></i>
@@ -1224,7 +1219,7 @@
                     <div class="contact-info">
                         <div class="contact-item email">
                             <i class="fas fa-envelope" aria-hidden="true"></i>
-                            <p><a href="mailto:binayakcreations20@gmail.com">contact@binayakbartaula.com</a></p>
+                            <p><a href="mailto:binayakbartaula@proton.me">contact@binayakbartaula.com</a></p>
                         </div>
                         <div class="contact-item phone">
                             <i class="fas fa-phone" aria-hidden="true"></i>
@@ -1277,9 +1272,12 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-left">
-                    <p>&copy; <span id="current-year">2025</span> Binayak Bartaula. All Rights Reserved.</p>
-                </div>
+                 <div class="footer-left">
+                <p>
+                    &copy; <span id="current-year"></span>
+                    Binayak Bartaula. All Rights Reserved.
+                </p>
+            </div>
                 <div class="footer-right">
                     <div class="footer-social">
                         <!-- <a href="https://linkedin.com/in/binayakbartaula" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
@@ -1298,23 +1296,23 @@
                         <a href="https://www.researchgate.net/profile/Binayak-Bartaula" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate Profile">
                             <i class="fab fa-researchgate" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.youtube.com/@binayakcreations/videos" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel">
+                        <!-- <a href="https://www.youtube.com/@binayakcreations/videos" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel">
                             <i class="fab fa-youtube" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.imdb.com/user/ur157500674" target="_blank" rel="noopener noreferrer" aria-label="IMDb Profile">
                             <i class="fab fa-imdb" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://medium.com/@binayakbartaula" target="_blank" rel="noopener noreferrer" aria-label="Medium Profile">
+                        </a> -->
+                        <!-- <a href="https://medium.com/@binayakbartaula" target="_blank" rel="noopener noreferrer" aria-label="Medium Profile">
                             <i class="fab fa-medium" aria-hidden="true"></i>
                         </a>
                         <a href="https://bsky.app/profile/binayakbartaula.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Bluesky Profile">
-                            <i class="fas fa-cloud" aria-hidden="true"></i>
+                            <i class="fas fa-cloud" aria-hidden="true"></i> -->
                         </a>
                         <!-- <a href="https://www.instagram.com/binayak_bartaula" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
                             <i class="fab fa-instagram" aria-hidden="true"></i>
                         </a> -->
-                        <a href="https://binayakio.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="E-Presence">
-                            <i class="fas fa-globe" aria-hidden="true"></i>
+                        <!-- <a href="https://binayakio.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="E-Presence">
+                            <i class="fas fa-globe" aria-hidden="true"></i> -->
                         </a>
                     </div>
                 </div>
@@ -1322,13 +1320,21 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="js/config.js?v=1.0.4"></script>
-    <script src="js/script.js?v=1.0.4"></script>
-    <script src="js/blog.js?v=1.0.4" type="module" defer></script>
-    
+<!-- Critical scripts -->
+<script src="js/config.js?v=1.0.4"></script>
+<script src="js/script.js?v=1.0.4"></script>
+
+<!-- Non-critical scripts - deferred -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" defer></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+<script src="js/blog.js?v=1.0.4" defer></script>
+
+<!-- Dynamic year script -->
+<script>
+    document.getElementById('current-year').textContent =
+        new Date().getFullYear();
+</script>
+
 </body>
-</html> 
+</html>
